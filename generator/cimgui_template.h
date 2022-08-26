@@ -41,6 +41,7 @@ typedef unsigned __int64 ImU64;
 struct GLFWwindow;
 struct SDL_Window;
 typedef union SDL_Event SDL_Event;
+struct ImGuiPlatformMonitor;
 #endif // CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 
 #include "auto_funcs.h"
@@ -60,6 +61,12 @@ CIMGUI_API ImVector_ImWchar* ImVector_ImWchar_create(void);
 CIMGUI_API void ImVector_ImWchar_destroy(ImVector_ImWchar* self);
 CIMGUI_API void ImVector_ImWchar_Init(ImVector_ImWchar* p);
 CIMGUI_API void ImVector_ImWchar_UnInit(ImVector_ImWchar* p);
+
+CIMGUI_API void ImGuiPlatformIO_Monitors_Resize(int size);
+CIMGUI_API void ImGuiPlatformIO_Monitors_PushBack(ImGuiPlatformMonitor monitor);
+CIMGUI_API void ImGuiPlatformIO_Monitors_PushFront(ImGuiPlatformMonitor monitor);
+
+CIMGUI_API void ImGuiPlatformIO_SetCallback(int callback, void* funcptr);
 
 
 #endif //CIMGUI_INCLUDED
